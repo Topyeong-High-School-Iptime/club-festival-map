@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아리 소개</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .club-map {
+            width: 80%;
+            max-width: 1000px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        /* 모달 팝업 */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            visibility: hidden;
+        }
+
+        .modal.visible {
+            visibility: visible;
+        }
+
+        /* 백그라운드 */
+        .modal-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            visibility: hidden;
+        }
+
+        .modal-background.visible {
+            visibility: visible;
+        }
+
+        .close-modal {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>2024 동아리제 탐방 지도</h1>
+
+    <!-- 이미지 맵 사용 -->
+    <img src="club.jpg" alt="동아리 탐방 지도" class="club-map" usemap="#clubmap">
+
+    <!-- 이미지 맵 정의 -->
+    <map name="clubmap">
+        <!-- 각 동아리 위치 좌표에 따른 클릭 영역 정의 -->
+        <area shape="rect" coords="347,1308,391,1357" alt="아이조아" href="#" data-intro="아이조아> 비눗방울 만들기🫧, 전시와 퀴즈(유아교육 봉사활동 및 교육이슈탐구)">
+        <area shape="rect" coords="509,1310,554,1354" alt="체력단련" href="#" data-intro="체력단련> 토평 올림픽🎊(팔씨름, 커플요가, 물풍선, 손바닥 씨름, 뿅망치)">
+        <area shape="rect" coords="728,1311,771,1352" alt="인공지능 피식" href="#" data-intro="인공지능 피식> '밤이 되었습니다' 🦹마피아 게임 탈출 (과학 실험 해결하고 물리실 탈출하기)">
+        <area shape="rect" coords="347,1308,391,1357" alt="아이조아" href="#" data-intro="아이조아> 비눗방울 만들기🫧, 전시와 퀴즈(유아교육 봉사활동 및 교육이슈탐구)">
+        <area shape="rect" coords="509,1310,554,1354" alt="체력단련" href="#" data-intro="체력단련> 토평 올림픽🎊(팔씨름, 커플요가, 물풍선, 손바닥 씨름, 뿅망치)">
+        <area shape="rect" coords="728,1311,771,1352" alt="인공지능 피식" href="#" data-intro="인공지능 피식> '밤이 되었습니다' 🦹마피아 게임 탈출 (과학 실험 해결하고 물리실 탈출하기)">
+        <area shape="rect" coords="726,1257,771,1301" alt="화생방" href="#" data-intro="화생방> 야광 탱탱볼 만들기&뷰테인 연소 실험☄">
+        <area shape="rect" coords="637,1220,676,1260" alt="문화생활" href="#" data-intro="문화생활> 우리들의 문화생활 활동 및 작품 전시📝">
+        <area shape="rect" coords="761,1155,796,1204" alt="아토믹스" href="#" data-intro="아토믹스> 슬라임 만들기🍵 및 업사이클링 화분 제작🪴">
+        <area shape="rect" coords="692,1132,739,1179" alt="다윈의 실험실" href="#" data-intro="다윈의 실험실> 액체 질소를 이용한 구슬 아이스크림🍦 만들기">
+        <area shape="rect" coords="753,1058,791,1102" alt="사회문제연구소" href="#" data-intro="사회문제연구소> 과녁 맞추기🏹(스펀지 화살) 및 군대간식체험🍜(뽀글이, 건빵쉐이크)">
+        <area shape="rect" coords="697,1035,737,1083" alt="국제이해협력" href="#" data-intro="국제이해협력> 유네스코 활동 및 한국 전통문화 체험🍹(다식,음료 만들기 및 윷놀이 체험)">
+        <area shape="rect" coords="323,1006,365,1052" alt="방송부" href="#" data-intro="방송부> 추억의 순간을 사진으로📸 ( 사진촬영)">
+        <area shape="rect" coords="187,938,230,978" alt="브랜디어스" href="#" data-intro="브랜디어스> 가상 창업 체험🧸(모루인형,비즈팔찌,퀴즈)">
+        <area shape="rect" coords="223,897,263,930" alt="시논사" href="#" data-intro="시논사> 법원테마카페 및 미니 토론, 시사 퀴즈 ⚖">
+        <area shape="rect" coords="355,922,394,966" alt="탑미디어" href="#" data-intro="탑미디어> 내마음, 내 생각 표현하기🍸💐 (교지 전시, 무알콜 칵테일, 핸드메이드 꽃다발)">
+        <area shape="rect" coords="732,929,773,966" alt="국제이해협력" href="#" data-intro="국제이해협력> 유네스코 활동 및 한국 전통문화 체험(다식,음료 만들기 및 윷놀이 체험)">
+        <area shape="rect" coords="730,878,769,919" alt="아이피 타임" href="#" data-intro="아이피 타임> 인생네컷📸, 롤드컵🖥(게임 대회), 활동 결과물 전시체험 및 코딩퀴즈👾">
+        <area shape="rect" coords="179,633,218,681" alt="심심타파" href="#" data-intro="심심타파> 내마을을 알려줘~!🃏 (타로상담, 심리테스트, 심리검사)♣">
+        <area shape="rect" coords="227,650,263,697" alt="동의보감" href="#" data-intro="동의보감> 🎃귀신의 집👻( 활력징후 변화 체험)">
+        <area shape="rect" coords="178,696,219,742" alt="인베스터" href="#" data-intro="인베스터> 비즈팔찌, 양모펠트 인형🧸📉( 핸드메이드 제품의 시장 분석과 소비자 트랜드 분석)">
+        <area shape="rect" coords="509,716,547,761" alt="아이앤유" href="#" data-intro="아이앤유> 친환경 핸드크림 만들기🧴활동 체험">
+        <area shape="rect" coords="595,718,631,759" alt="톤앤매너" href="#" data-intro="톤앤매너> 자신만의 악세사리 만들기💍(작품전시, 팔찌 만들기 체험)">
+        <area shape="rect" coords="547,635,585,677" alt="메이크미" href="#" data-intro="메이크미> 향수 제조 및 비즈 팔찌👃, 반지 DIY💍">
+        <area shape="rect" coords="758,657,796,700" alt="비전타임즈" href="#" data-intro="비전타임즈> 기사 전시 및 퀴즈 체험">
+        <area shape="rect" coords="702,626,742,678" alt="솔리언 또래상담" href="#" data-intro="솔리언 또래상담> 마음약국 체험 및 모루인형 만들기">
+        <area shape="rect" coords="766,579,804,626" alt="화랑" href="#" data-intro="화랑> 패션타투,슈링클스 종이로 키링 만들기, 미니 캐리커쳐(창의적 활동 및 시각적 소통)">
+        <!-- 필요한 만큼 더 추가 가능 -->
+    </map>
+
+    <!-- 모달 팝업 -->
+    <div class="modal">
+        <button class="close-modal">&times;</button>
+        <h2>동아리 소개</h2>
+        <p id="modal-intro">소개글</p>
+    </div>
+
+    <div class="modal-background"></div> <!-- 백그라운드 -->
+
+    <script>
+        document.querySelectorAll('area').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault(); // 기본 클릭 동작 방지
+                const introText = item.getAttribute('data-intro');
+                document.getElementById('modal-intro').innerText = introText;
+                document.querySelector('.modal').classList.add('visible');
+                document.querySelector('.modal-background').classList.add('visible');
+            });
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.querySelector('.modal').classList.remove('visible');
+            document.querySelector('.modal-background').classList.remove('visible');
+        });
+
+        document.querySelector('.modal-background').addEventListener('click', () => {
+            document.querySelector('.modal').classList.remove('visible');
+            document.querySelector('.modal-background').classList.remove('visible');
+        });
+    </script>
+</body>
+</html>
